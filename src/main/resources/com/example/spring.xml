@@ -20,4 +20,8 @@
 
     <bean id="aTicket" class="com.example.Ticket"
           scope="prototype"/>
+
+    <bean id="auditorium" class="com.example.Auditorium"
+          init-method="turnOnLights"
+          destroy-method="turnOffLights"/>
 </beans>

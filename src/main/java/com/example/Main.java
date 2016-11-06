@@ -19,5 +19,8 @@ public class Main {
         final Ticket ticket1 = (Ticket) ctx.getBean("aTicket");
         final Ticket ticket2 = (Ticket) ctx.getBean("aTicket");
         System.out.println(ticket1.id + " " + ticket2.id);
+
+        final Auditorium auditorium = (Auditorium) ctx.getBean("auditorium");
+        System.out.println(auditorium.isLightsOn);
     }
 }
