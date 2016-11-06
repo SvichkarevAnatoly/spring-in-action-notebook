@@ -9,5 +9,8 @@ public class Main {
 
         final Performer duke = (Performer) ctx.getBean("duke");
         duke.perform();
+
+        final Performer poeticDuke = (Performer) ctx.getBean("poeticDuke");
+        poeticDuke.perform();
     }
 }
