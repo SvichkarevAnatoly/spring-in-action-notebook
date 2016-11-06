@@ -15,4 +15,6 @@
 
     <bean id="sonnet29" class="com.example.Sonnet29"/>
 
+    <bean id="theStage" class="com.example.Stage"
+          factory-method="getInstance"/>
 </beans>

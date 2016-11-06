@@ -12,5 +12,8 @@ public class Main {
 
         final Performer poeticDuke = (Performer) ctx.getBean("poeticDuke");
         poeticDuke.perform();
+
+        final Stage stage = (Stage) ctx.getBean("theStage");
+        System.out.println(stage.toString());
     }
 }
