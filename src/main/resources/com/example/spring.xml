@@ -4,6 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean id="duke" class="com.example.Juggler"/>
+    <bean id="duke" class="com.example.Juggler">
+        <constructor-arg value="25"/>
+    </bean>
 
 </beans>
