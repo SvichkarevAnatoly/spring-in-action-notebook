@@ -15,5 +15,9 @@ public class Main {
 
         final Stage stage = (Stage) ctx.getBean("theStage");
         System.out.println(stage.toString());
+
+        final Ticket ticket1 = (Ticket) ctx.getBean("aTicket");
+        final Ticket ticket2 = (Ticket) ctx.getBean("aTicket");
+        System.out.println(ticket1.id + " " + ticket2.id);
     }
 }

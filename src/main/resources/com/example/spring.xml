@@ -17,4 +17,7 @@
 
     <bean id="theStage" class="com.example.Stage"
           factory-method="getInstance"/>
+
+    <bean id="aTicket" class="com.example.Ticket"
+          scope="prototype"/>
 </beans>
