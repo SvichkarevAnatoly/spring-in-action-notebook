@@ -10,7 +10,7 @@ public class Juggler implements Performer {
         this.beanBags = beanBags;
     }
 
-    public void perform() {
-        System.out.println("juggling " + beanBags);
+    public String perform() {
+        return "juggling " + beanBags;
     }
 }

@@ -21,9 +21,11 @@ public class Sonnet29 implements Poem {
     public Sonnet29() {
     }
 
-    public void recite() {
+    public String recite() {
+        final StringBuilder sb = new StringBuilder();
         for (String LINE : LINES) {
-            System.out.println(LINE);
+            sb.append(LINE).append('\n');
         }
+        return sb.toString();
     }
 }

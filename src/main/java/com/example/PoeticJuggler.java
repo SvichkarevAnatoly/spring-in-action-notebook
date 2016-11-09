@@ -13,9 +13,10 @@ public class PoeticJuggler extends Juggler {
         this.poem = poem;
     }
 
-    public void perform() {
-        super.perform();
-        System.out.println("While reciting ...");
-        poem.recite();
+    public String perform() {
+        final String superPerform = super.perform();
+        final String beforeReciting = "While reciting ...";
+        final String recite = poem.recite();
+        return superPerform + '\n' + beforeReciting + '\n' + recite;
     }
 }
