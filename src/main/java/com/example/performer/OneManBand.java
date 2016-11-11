@@ -2,10 +2,8 @@ package com.example.performer;
 
 import com.example.gear.Instrument;
 
-import java.util.Collection;
-
 public class OneManBand implements Performer {
-    private Collection<Instrument> instruments;
+    private Instrument[] instruments;
 
     @Override
     public String perform() {
@@ -16,7 +14,7 @@ public class OneManBand implements Performer {
         return sb.toString();
     }
 
-    public void setInstruments(Collection<Instrument> instruments) {
+    public void setInstruments(Instrument[] instruments) {
         this.instruments = instruments;
     }
 }

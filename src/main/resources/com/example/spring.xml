@@ -44,7 +44,11 @@
           p:song="Jingle Bells"
           p:instrument-ref="Saxophone"/>
 
-    <bean id="hank" class="com.example.performer.OneManBand">
+    <bean id="guitar" class="com.example.gear.Guitar"/>
+    <bean id="cymbal" class="com.example.gear.Cymbal"/>
+    <bean id="harmonica" class="com.example.gear.Harmonica"/>
+
+    <bean id="hankList" class="com.example.performer.OneManBand">
         <property name="instruments">
             <list>
                 <ref bean="guitar"/>
@@ -54,7 +58,15 @@
         </property>
     </bean>
 
-    <bean id="guitar" class="com.example.gear.Guitar"/>
-    <bean id="cymbal" class="com.example.gear.Cymbal"/>
-    <bean id="harmonica" class="com.example.gear.Harmonica"/>
+    <bean id="hankSet" class="com.example.performer.OneManBand">
+        <property name="instruments">
+            <set>
+                <ref bean="guitar"/>
+                <ref bean="cymbal"/>
+                <ref bean="harmonica"/>
+                <ref bean="harmonica"/>
+            </set>
+        </property>
+    </bean>
+
 </beans>

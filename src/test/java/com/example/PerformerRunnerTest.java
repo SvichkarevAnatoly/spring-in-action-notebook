@@ -74,7 +74,14 @@ public class PerformerRunnerTest {
 
     @Test
     public void list() throws Exception {
-        final Performer hank = (Performer) ctx.getBean("hank");
+        final Performer hank = (Performer) ctx.getBean("hankList");
+
+        assertThat(hank.perform(), is("G\nC\nH\n"));
+    }
+
+    @Test
+    public void set() throws Exception {
+        final Performer hank = (Performer) ctx.getBean("hankSet");
 
         assertThat(hank.perform(), is("G\nC\nH\n"));
     }
