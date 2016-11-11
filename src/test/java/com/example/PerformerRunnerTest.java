@@ -1,11 +1,13 @@
 package com.example;
 
+import com.example.gear.NullField;
 import com.example.performer.Performer;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
+import static org.hamcrest.core.IsNull.nullValue;
 import static org.junit.Assert.assertThat;
 
 public class PerformerRunnerTest {
@@ -93,5 +95,12 @@ public class PerformerRunnerTest {
         assertThat(hank.perform(), is("guitar : G\n" +
                 "cymbal : C\n" +
                 "harmonica : H\n"));
+    }
+
+    @Test
+    public void checkNullValue() throws Exception {
+        final NullField aNull = ((NullField) ctx.getBean("null"));
+
+        assertThat(aNull.getObject(), is(nullValue()));
     }
 }

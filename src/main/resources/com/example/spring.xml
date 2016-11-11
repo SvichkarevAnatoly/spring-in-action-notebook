@@ -78,4 +78,10 @@
             </map>
         </property>
     </bean>
+
+    <bean id="null" class="com.example.gear.NullField">
+        <property name="object">
+            <null/>
+        </property>
+    </bean>
 </beans>
