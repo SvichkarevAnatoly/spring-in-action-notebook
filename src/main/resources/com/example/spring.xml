@@ -69,4 +69,13 @@
         </property>
     </bean>
 
+    <bean id="hankMap" class="com.example.performer.OneManBandNamedInstruments">
+        <property name="instruments">
+            <map>
+                <entry key="guitar" value-ref="guitar"/>
+                <entry key="cymbal" value-ref="cymbal"/>
+                <entry key="harmonica" value-ref="harmonica"/>
+            </map>
+        </property>
+    </bean>
 </beans>

@@ -85,4 +85,13 @@ public class PerformerRunnerTest {
 
         assertThat(hank.perform(), is("G\nC\nH\n"));
     }
+
+    @Test
+    public void map() throws Exception {
+        final Performer hank = (Performer) ctx.getBean("hankMap");
+
+        assertThat(hank.perform(), is("guitar : G\n" +
+                "cymbal : C\n" +
+                "harmonica : H\n"));
+    }
 }
