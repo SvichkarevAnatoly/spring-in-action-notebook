@@ -15,6 +15,7 @@ public class PoeticJuggler extends Juggler {
         this.poem = poem;
     }
 
+    @Override
     public String perform() {
         final String superPerform = super.perform();
         final String beforeReciting = "While reciting ...";

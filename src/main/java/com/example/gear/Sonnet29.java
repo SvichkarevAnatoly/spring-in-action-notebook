@@ -21,6 +21,7 @@ public class Sonnet29 implements Poem {
     public Sonnet29() {
     }
 
+    @Override
     public String recite() {
         final StringBuilder sb = new StringBuilder();
         for (String LINE : LINES) {

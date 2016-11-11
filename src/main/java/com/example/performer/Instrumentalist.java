@@ -6,6 +6,7 @@ public class Instrumentalist implements Performer {
     private String song;
     private Instrument instrument;
 
+    @Override
     public String perform() {
         return song + " and " + instrument.play();
     }

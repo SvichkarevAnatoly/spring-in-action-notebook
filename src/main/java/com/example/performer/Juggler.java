@@ -10,6 +10,7 @@ public class Juggler implements Performer {
         this.beanBags = beanBags;
     }
 
+    @Override
     public String perform() {
         return "juggling " + beanBags;
     }
