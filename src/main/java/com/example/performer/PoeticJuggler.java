@@ -1,4 +1,6 @@
-package com.example;
+package com.example.performer;
+
+import com.example.gear.Poem;
 
 public class PoeticJuggler extends Juggler {
     private Poem poem;

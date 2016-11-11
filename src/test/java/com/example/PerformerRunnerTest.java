@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.performer.Performer;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

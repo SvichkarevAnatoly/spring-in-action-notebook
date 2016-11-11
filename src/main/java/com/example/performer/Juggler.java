@@ -1,4 +1,4 @@
-package com.example;
+package com.example.performer;
 
 public class Juggler implements Performer {
     private int beanBags = 3;

@@ -1,4 +1,4 @@
-package com.example;
+package com.example.gear;
 
 public class Sonnet29 implements Poem {
     private static String[] LINES = {
