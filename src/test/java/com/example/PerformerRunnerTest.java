@@ -50,4 +50,11 @@ public class PerformerRunnerTest {
         assertThat(poeticDuke.perform().contains("While reciting ..."), is(true));
         assertThat(poeticDuke.perform().contains("Моя душа несется в вышину."), is(true));
     }
+
+    @Test
+    public void setValueUsingSetter() throws Exception {
+        final Performer kenny = (Performer) ctx.getBean("kenny");
+
+        assertThat(kenny.perform(), is("Jingle Bells and TOOT TOOT TOOT"));
+    }
 }

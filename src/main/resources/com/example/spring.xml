@@ -24,4 +24,11 @@
     <bean id="auditorium" class="com.example.Auditorium"
           init-method="turnOnLights"
           destroy-method="turnOffLights"/>
+
+    <bean id="kenny" class="com.example.performer.Instrumentalist">
+        <property name="song" value="Jingle Bells"/>
+        <property name="instrument" ref="saxophone"/>
+    </bean>
+
+    <bean id="saxophone" class="com.example.gear.Saxophone"/>
 </beans>
