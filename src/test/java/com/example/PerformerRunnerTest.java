@@ -71,4 +71,11 @@ public class PerformerRunnerTest {
 
         assertThat(kenny.perform(), is("Jingle Bells and TOOT TOOT TOOT"));
     }
+
+    @Test
+    public void list() throws Exception {
+        final Performer hank = (Performer) ctx.getBean("hank");
+
+        assertThat(hank.perform(), is("G\nC\nH\n"));
+    }
 }

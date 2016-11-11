@@ -43,4 +43,18 @@
     <bean id="kennyP" class="com.example.performer.Instrumentalist"
           p:song="Jingle Bells"
           p:instrument-ref="Saxophone"/>
+
+    <bean id="hank" class="com.example.performer.OneManBand">
+        <property name="instruments">
+            <list>
+                <ref bean="guitar"/>
+                <ref bean="cymbal"/>
+                <ref bean="harmonica"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="guitar" class="com.example.gear.Guitar"/>
+    <bean id="cymbal" class="com.example.gear.Cymbal"/>
+    <bean id="harmonica" class="com.example.gear.Harmonica"/>
 </beans>
