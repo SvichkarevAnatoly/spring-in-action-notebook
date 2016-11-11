@@ -57,4 +57,11 @@ public class PerformerRunnerTest {
 
         assertThat(kenny.perform(), is("Jingle Bells and TOOT TOOT TOOT"));
     }
+
+    @Test
+    public void setValueUsingSetterInnerComponent() throws Exception {
+        final Performer kenny = (Performer) ctx.getBean("kennyWithHisSaxophone");
+
+        assertThat(kenny.perform(), is("Jingle Bells and TOOT TOOT TOOT"));
+    }
 }

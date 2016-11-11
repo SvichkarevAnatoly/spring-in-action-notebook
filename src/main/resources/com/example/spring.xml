@@ -25,10 +25,17 @@
           init-method="turnOnLights"
           destroy-method="turnOffLights"/>
 
+    <bean id="Saxophone" class="com.example.gear.Saxophone"/>
+
     <bean id="kenny" class="com.example.performer.Instrumentalist">
         <property name="song" value="Jingle Bells"/>
-        <property name="instrument" ref="saxophone"/>
+        <property name="instrument" ref="Saxophone"/>
     </bean>
 
-    <bean id="saxophone" class="com.example.gear.Saxophone"/>
+    <bean id="kennyWithHisSaxophone" class="com.example.performer.Instrumentalist">
+        <property name="song" value="Jingle Bells"/>
+        <property name="instrument">
+            <bean class="com.example.gear.Saxophone"/>
+        </property>
+    </bean>
 </beans>
