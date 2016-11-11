@@ -64,4 +64,11 @@ public class PerformerRunnerTest {
 
         assertThat(kenny.perform(), is("Jingle Bells and TOOT TOOT TOOT"));
     }
+
+    @Test
+    public void pNameSpace() throws Exception {
+        final Performer kenny = (Performer) ctx.getBean("kennyP");
+
+        assertThat(kenny.perform(), is("Jingle Bells and TOOT TOOT TOOT"));
+    }
 }
