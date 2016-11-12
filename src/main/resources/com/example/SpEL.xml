@@ -74,4 +74,8 @@
     <bean id="kenny3" class="com.example.performer.Instrumentalist"
           p:song="Jingle Bells"
           p:instrument="#{hankList.instruments[2]}"/>
+
+    <bean id="home" class="java.lang.String">
+        <constructor-arg value="#{systemEnvironment['HOME']}"/>
+    </bean>
 </beans>

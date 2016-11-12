@@ -68,4 +68,11 @@ public class SpELTest {
 
         assertThat(hankList.getInstruments()[2].play(), is("H"));
     }
+
+    @Test
+    public void getSystemProperty() throws Exception {
+        final String homePath = (String) ctx.getBean("home");
+
+        assertThat(homePath, is("/home/anatoly"));
+    }
 }
