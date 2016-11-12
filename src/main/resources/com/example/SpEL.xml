@@ -25,4 +25,8 @@
     <bean id="duke2" class="com.example.performer.Juggler">
         <constructor-arg value="#{T(java.lang.Math).PI}"/>
     </bean>
+
+    <bean id="duke3" class="com.example.performer.Juggler">
+        <constructor-arg value="#{kenny.song ?: 'Jingle Bells'}"/>
+    </bean>
 </beans>
