@@ -29,4 +29,9 @@
     <bean id="duke3" class="com.example.performer.Juggler">
         <constructor-arg value="#{kenny.song ?: 'Jingle Bells'}"/>
     </bean>
+
+    <bean id="adminEmail" class="com.example.other.Email">
+        <constructor-arg name="email" value="tolik@gmail.com"/>
+        <property name="validEmail" value="#{adminEmail.email matches '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.com'}"/>
+    </bean>
 </beans>

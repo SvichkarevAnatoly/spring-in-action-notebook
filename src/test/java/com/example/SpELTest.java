@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.other.Email;
 import com.example.performer.Performer;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -44,5 +45,12 @@ public class SpELTest {
         final Performer duke3 = (Performer) ctx.getBean("duke3");
 
         assertThat(duke3.perform(), is("juggling 25"));
+    }
+
+    @Test
+    public void matches() throws Exception {
+        final Email adminEmail = (Email) ctx.getBean("adminEmail");
+
+        assertThat(adminEmail.isValidEmail(), is(true));
     }
 }
