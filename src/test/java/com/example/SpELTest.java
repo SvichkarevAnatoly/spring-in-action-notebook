@@ -12,9 +12,16 @@ public class SpELTest {
             new ClassPathXmlApplicationContext("com/example/SpEL.xml");
 
     @Test
-    public void literals() throws Exception {
+    public void literalsAndArithmetic() throws Exception {
         final Performer duke = (Performer) ctx.getBean("duke");
 
         assertThat(duke.perform(), is("juggling 25"));
+    }
+
+    @Test
+    public void callMethod() throws Exception {
+        final Performer kenny = (Performer) ctx.getBean("kenny");
+
+        assertThat(kenny.perform(), is("25 and TOOT TOOT TOOT"));
     }
 }

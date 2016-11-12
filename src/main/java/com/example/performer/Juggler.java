@@ -14,4 +14,8 @@ public class Juggler implements Performer {
     public String perform() {
         return "juggling " + beanBags;
     }
+
+    public int getBeanBags() {
+        return beanBags;
+    }
 }

@@ -7,4 +7,11 @@
     <bean id="duke" class="com.example.performer.Juggler">
         <constructor-arg value="#{4^2 + 9}"/>
     </bean>
+
+    <bean id="kenny" class="com.example.performer.Instrumentalist">
+        <property name="song" value="#{duke.beanBags}"/>
+        <property name="instrument">
+            <bean class="com.example.gear.Saxophone"/>
+        </property>
+    </bean>
 </beans>
