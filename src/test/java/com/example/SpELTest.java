@@ -53,4 +53,11 @@ public class SpELTest {
 
         assertThat(adminEmail.isValidEmail(), is(true));
     }
+
+    /*@Test
+    public void indexList() throws Exception {
+        final City city = (City) ctx.getBean("oneCity");
+
+        assertThat(city.name, is("Dallas"));
+    }*/
 }

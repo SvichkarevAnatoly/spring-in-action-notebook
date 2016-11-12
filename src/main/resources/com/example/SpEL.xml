@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
@@ -34,4 +35,25 @@
         <constructor-arg name="email" value="tolik@gmail.com"/>
         <property name="validEmail" value="#{adminEmail.email matches '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.com'}"/>
     </bean>
+
+    <!--<util:list id="cities" value-type="com.example.other.City">
+        <bean class="com.example.other.City"
+              p:name="Chicago" p:state="IL" p:population="2853114"/>
+        <bean class="com.example.other.City"
+              p:name="Atlanta" p:state="GA" p:population="537958"/>
+        <bean class="com.example.other.City"
+              p:name="Dallas" p:state="TX" p:population="1279910"/>
+        <bean class="com.example.other.City"
+              p:name="Houston" p:state="TX" p:population="2242193"/>
+        <bean class="com.example.other.City"
+              p:name="Odessa" p:state="TX" p:population="90943"/>
+        <bean class="com.example.other.City"
+              p:name="El Paso" p:state="TX" p:population="613190"/>
+        <bean class="com.example.other.City"
+              p:name="Jal" p:state="NM" p:population="1996"/>
+    </util:list>
+
+    <bean id="oneCity" class="com.example.other.City">
+        <constructor-arg value="#{cities[2}"/>
+    </bean>-->
 </beans>
