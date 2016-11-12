@@ -10,9 +10,9 @@ import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.core.IsNull.nullValue;
 import static org.junit.Assert.assertThat;
 
-public class PerformerRunnerTest {
+public class BasicTest {
     private final ClassPathXmlApplicationContext ctx =
-            new ClassPathXmlApplicationContext("com/example/spring.xml");
+            new ClassPathXmlApplicationContext("com/example/basic.xml");
 
     @Test
     public void prototypeDiffObjects() throws Exception {

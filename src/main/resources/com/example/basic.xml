@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="duke" class="com.example.performer.Juggler">
+        <constructor-arg value="25"/>
+    </bean>
+
+    <bean id="poeticDuke" class="com.example.performer.PoeticJuggler">
+        <constructor-arg value="15"/>
+        <constructor-arg ref="sonnet29"/>
+    </bean>
+
+    <bean id="sonnet29" class="com.example.gear.Sonnet29"/>
+
+    <bean id="theStage" class="com.example.Stage"
+          factory-method="getInstance"/>
+
+    <bean id="aTicket" class="com.example.Ticket"
+          scope="prototype"/>
+
+    <bean id="auditorium" class="com.example.Auditorium"
+          init-method="turnOnLights"
+          destroy-method="turnOffLights"/>
+
+    <bean id="Saxophone" class="com.example.gear.Saxophone"/>
+
+    <bean id="kenny" class="com.example.performer.Instrumentalist">
+        <property name="song" value="Jingle Bells"/>
+        <property name="instrument" ref="Saxophone"/>
+    </bean>
+
+    <bean id="kennyWithHisSaxophone" class="com.example.performer.Instrumentalist">
+        <property name="song" value="Jingle Bells"/>
+        <property name="instrument">
+            <bean class="com.example.gear.Saxophone"/>
+        </property>
+    </bean>
+
+    <bean id="kennyP" class="com.example.performer.Instrumentalist"
+          p:song="Jingle Bells"
+          p:instrument-ref="Saxophone"/>
+
+    <bean id="guitar" class="com.example.gear.Guitar"/>
+    <bean id="cymbal" class="com.example.gear.Cymbal"/>
+    <bean id="harmonica" class="com.example.gear.Harmonica"/>
+
+    <bean id="hankList" class="com.example.performer.OneManBand">
+        <property name="instruments">
+            <list>
+                <ref bean="guitar"/>
+                <ref bean="cymbal"/>
+                <ref bean="harmonica"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="hankSet" class="com.example.performer.OneManBand">
+        <property name="instruments">
+            <set>
+                <ref bean="guitar"/>
+                <ref bean="cymbal"/>
+                <ref bean="harmonica"/>
+                <ref bean="harmonica"/>
+            </set>
+        </property>
+    </bean>
+
+    <bean id="hankMap" class="com.example.performer.OneManBandNamedInstruments">
+        <property name="instruments">
+            <map>
+                <entry key="guitar" value-ref="guitar"/>
+                <entry key="cymbal" value-ref="cymbal"/>
+                <entry key="harmonica" value-ref="harmonica"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="null" class="com.example.gear.NullField">
+        <property name="object">
+            <null/>
+        </property>
+    </bean>
+</beans>
