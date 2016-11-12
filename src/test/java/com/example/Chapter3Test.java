@@ -17,4 +17,11 @@ public class Chapter3Test {
 
         assertThat(stevie.perform(), is("Somewhere over the rainbow and G"));
     }
+
+    @Test
+    public void methodReplacer() throws Exception {
+        final Performer harry = (Performer) ctx.getBean("harry");
+
+        assertThat(harry.perform(), is("A ferocious tiger"));
+    }
 }
