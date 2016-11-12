@@ -70,9 +70,16 @@ public class SpELTest {
     }
 
     @Test
-    public void getSystemProperty() throws Exception {
-        final String homePath = (String) ctx.getBean("home");
+    public void getSystemEnvironment() throws Exception {
+        final String homePath = (String) ctx.getBean("homePath");
 
         assertThat(homePath, is("/home/anatoly"));
+    }
+
+    @Test
+    public void getCharFromString() throws Exception {
+        final String aChar = (String) ctx.getBean("char");
+
+        assertThat(aChar, is("i"));
     }
 }

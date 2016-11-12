@@ -75,7 +75,11 @@
           p:song="Jingle Bells"
           p:instrument="#{hankList.instruments[2]}"/>
 
-    <bean id="home" class="java.lang.String">
+    <bean id="homePath" class="java.lang.String">
         <constructor-arg value="#{systemEnvironment['HOME']}"/>
+    </bean>
+
+    <bean id="char" class="java.lang.String">
+        <constructor-arg value="#{'Tolik'[3]}"/>
     </bean>
 </beans>
