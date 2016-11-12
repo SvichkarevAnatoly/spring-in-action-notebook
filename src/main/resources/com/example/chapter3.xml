@@ -15,7 +15,7 @@
         <property name="instrument" ref="guitar"/>
     </bean>
 
-    <!--<bean id="harry" class="com.example.performer.Magician">
+    <bean id="harry" class="com.example.performer.Magician">
         <property name="magicBox" ref="box"/>
     </bean>
 
@@ -25,5 +25,9 @@
                 replacer="tigerReplacer">
         </replaced-method>
     </bean>
-    <bean id="tigerReplacer" class="com.example.gear.TigerReplacer"/>-->
+    <bean id="tigerReplacer" class="com.example.gear.TigerReplacer"/>
+
+    <bean id="carl" class="com.example.performer.InstrumentalistLookup">
+        <lookup-method name="myInstrument" bean="guitar"/>
+    </bean>
 </beans>

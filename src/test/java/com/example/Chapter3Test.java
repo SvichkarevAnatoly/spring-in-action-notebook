@@ -24,4 +24,11 @@ public class Chapter3Test {
 
         assertThat(harry.perform(), is("A ferocious tiger"));
     }
+
+    @Test
+    public void methodLookup() throws Exception {
+        final Performer carl = (Performer) ctx.getBean("carl");
+
+        assertThat(carl.perform(), is("G"));
+    }
 }
