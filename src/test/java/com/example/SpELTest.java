@@ -31,4 +31,11 @@ public class SpELTest {
 
         assertThat(kenny.perform(), is("25 and TOOT TOOT TOOT"));
     }
+
+    @Test
+    public void operatorT() throws Exception {
+        final Performer duke2 = (Performer) ctx.getBean("duke2");
+
+        assertThat(duke2.perform(), is("juggling 3"));
+    }
 }

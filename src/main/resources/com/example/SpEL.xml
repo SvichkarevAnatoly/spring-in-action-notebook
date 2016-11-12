@@ -21,4 +21,8 @@
             <bean class="com.example.gear.Saxophone"/>
         </property>
     </bean>
+
+    <bean id="duke2" class="com.example.performer.Juggler">
+        <constructor-arg value="#{T(java.lang.Math).PI}"/>
+    </bean>
 </beans>
