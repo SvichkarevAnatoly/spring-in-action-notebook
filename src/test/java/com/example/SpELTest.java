@@ -1,6 +1,7 @@
 package com.example;
 
 import com.example.other.Email;
+import com.example.performer.OneManBand;
 import com.example.performer.Performer;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -60,4 +61,11 @@ public class SpELTest {
 
         assertThat(city.name, is("Dallas"));
     }*/
+
+    @Test
+    public void indexListInProperty() throws Exception {
+        final OneManBand hankList = (OneManBand) ctx.getBean("hankList");
+
+        assertThat(hankList.getInstruments()[2].play(), is("H"));
+    }
 }

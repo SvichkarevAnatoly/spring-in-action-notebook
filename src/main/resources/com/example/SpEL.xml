@@ -56,4 +56,22 @@
     <bean id="oneCity" class="com.example.other.City">
         <constructor-arg value="#{cities[2}"/>
     </bean>-->
+
+    <bean id="guitar" class="com.example.gear.Guitar"/>
+    <bean id="cymbal" class="com.example.gear.Cymbal"/>
+    <bean id="harmonica" class="com.example.gear.Harmonica"/>
+
+    <bean id="hankList" class="com.example.performer.OneManBand">
+        <property name="instruments">
+            <list>
+                <ref bean="guitar"/>
+                <ref bean="cymbal"/>
+                <ref bean="harmonica"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="kenny3" class="com.example.performer.Instrumentalist"
+          p:song="Jingle Bells"
+          p:instrument="#{hankList.instruments[2]}"/>
 </beans>

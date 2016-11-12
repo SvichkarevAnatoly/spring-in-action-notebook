@@ -17,4 +17,8 @@ public class OneManBand implements Performer {
     public void setInstruments(Instrument[] instruments) {
         this.instruments = instruments;
     }
+
+    public Instrument[] getInstruments() {
+        return instruments;
+    }
 }
