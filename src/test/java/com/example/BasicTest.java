@@ -1,6 +1,9 @@
 package com.example;
 
 import com.example.gear.NullField;
+import com.example.other.Auditorium;
+import com.example.other.Stage;
+import com.example.other.Ticket;
 import com.example.performer.Performer;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

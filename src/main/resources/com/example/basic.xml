@@ -16,13 +16,13 @@
 
     <bean id="sonnet29" class="com.example.gear.Sonnet29"/>
 
-    <bean id="theStage" class="com.example.Stage"
+    <bean id="theStage" class="com.example.other.Stage"
           factory-method="getInstance"/>
 
-    <bean id="aTicket" class="com.example.Ticket"
+    <bean id="aTicket" class="com.example.other.Ticket"
           scope="prototype"/>
 
-    <bean id="auditorium" class="com.example.Auditorium"
+    <bean id="auditorium" class="com.example.other.Auditorium"
           init-method="turnOnLights"
           destroy-method="turnOffLights"/>
 
