@@ -14,4 +14,11 @@
             <bean class="com.example.gear.Saxophone"/>
         </property>
     </bean>
+
+    <bean id="kenny2" class="com.example.performer.Instrumentalist">
+        <property name="song" value="#{kenny.getSong()?.toUpperCase()}"/>
+        <property name="instrument">
+            <bean class="com.example.gear.Saxophone"/>
+        </property>
+    </bean>
 </beans>

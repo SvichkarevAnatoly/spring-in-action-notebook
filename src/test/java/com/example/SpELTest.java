@@ -24,4 +24,11 @@ public class SpELTest {
 
         assertThat(kenny.perform(), is("25 and TOOT TOOT TOOT"));
     }
+
+    @Test
+    public void callIfNotNull() throws Exception {
+        final Performer kenny = (Performer) ctx.getBean("kenny2");
+
+        assertThat(kenny.perform(), is("25 and TOOT TOOT TOOT"));
+    }
 }
