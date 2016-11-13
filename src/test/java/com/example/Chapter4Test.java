@@ -16,4 +16,10 @@ public class Chapter4Test {
         final Performer eddie = (Performer) ctx.getBean("ch4eddie");
         assertThat(eddie.perform(), is("Jingle Bells and G"));
     }
+
+    @Test
+    public void createBeanFromJava() throws Exception {
+        final Performer duke = (Performer) ctx.getBean("dukeJava");
+        assertThat(duke.perform(), is("juggling 3"));
+    }
 }
