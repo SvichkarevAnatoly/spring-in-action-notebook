@@ -14,10 +14,11 @@
             <aop:pointcut id="performance"
                           expression="execution(* com.example.performer.Performer.perform(..))"/>
 
-            <aop:before pointcut-ref="performance" method="takeSeats"/>
+            <aop:around method="watchPerformance" pointcut-ref="performance"/>
+            <!--<aop:before pointcut-ref="performance" method="takeSeats"/>
             <aop:before pointcut-ref="performance" method="turnOffCellPhones"/>
             <aop:after-returning pointcut-ref="performance" method="applaud"/>
-            <aop:after-throwing pointcut-ref="performance" method="demandRefund"/>
+            <aop:after-throwing pointcut-ref="performance" method="demandRefund"/>-->
         </aop:aspect>
     </aop:config>
 
