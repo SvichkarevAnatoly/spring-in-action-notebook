@@ -1,8 +1,13 @@
 package com.example;
 
+import com.example.ch5.MindReader;
+import com.example.ch5.Thinker;
 import com.example.performer.Performer;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 public class Chapter5Test {
     private static final ClassPathXmlApplicationContext ctx =
@@ -12,5 +17,16 @@ public class Chapter5Test {
     public void aspectBeforeAfter() {
         final Performer tom = (Performer) ctx.getBean("tom");
         System.out.println(tom.perform());
+    }
+
+    @Test
+    public void getArgsUsingAspect() throws Exception {
+        final MindReader magician = (MindReader) ctx.getBean("magician");
+        final Thinker volunteer = (Thinker) ctx.getBean("volunteer");
+
+        final String thoughts = "Queen of Hearts";
+        volunteer.thinkOfSomething(thoughts);
+
+        assertThat(magician.getThoughts(), is(thoughts));
     }
 }

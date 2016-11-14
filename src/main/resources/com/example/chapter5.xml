@@ -21,6 +21,19 @@
             <aop:after-throwing pointcut-ref="performance" method="demandRefund"/>-->
         </aop:aspect>
     </aop:config>
-
     <bean id="tom" class="com.example.performer.Juggler"/>
+
+    <aop:config>
+        <aop:aspect ref="magician">
+            <aop:pointcut id="thinking"
+                          expression="execution(*
+                          com.example.ch5.Thinker.thinkOfSomething(String))
+                          and args(tho)"/>
+            <aop:before method="interceptThoughts"
+                        pointcut-ref="thinking"
+                        arg-names="tho"/>
+        </aop:aspect>
+    </aop:config>
+    <bean id="magician" class="com.example.ch5.Magician"/>
+    <bean id="volunteer" class="com.example.ch5.Volunteer"/>
 </beans>
