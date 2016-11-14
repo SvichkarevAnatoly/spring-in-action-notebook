@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.other.City;
 import com.example.other.Email;
 import com.example.performer.OneManBand;
 import com.example.performer.Performer;
@@ -55,12 +56,12 @@ public class SpELTest {
         assertThat(adminEmail.isValidEmail(), is(true));
     }
 
-    /*@Test
+    @Test
     public void indexList() throws Exception {
         final City city = (City) ctx.getBean("oneCity");
 
         assertThat(city.name, is("Dallas"));
-    }*/
+    }
 
     @Test
     public void indexListInProperty() throws Exception {
