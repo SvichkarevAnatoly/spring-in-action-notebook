@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
+
+    <bean id="audience" class="com.example.ch5.Audience"/>
+
+    <aop:config>
+        <aop:aspect ref="audience">
+            <aop:pointcut id="performance"
+                          expression="execution(* com.example.performer.Performer.perform(..))"/>
+
+            <aop:before pointcut-ref="performance" method="takeSeats"/>
+            <aop:before pointcut-ref="performance" method="turnOffCellPhones"/>
+            <aop:after-returning pointcut-ref="performance" method="applaud"/>
+            <aop:after-throwing pointcut-ref="performance" method="demandRefund"/>
+        </aop:aspect>
+    </aop:config>
+
+    <bean id="tom" class="com.example.performer.Juggler"/>
+</beans>
