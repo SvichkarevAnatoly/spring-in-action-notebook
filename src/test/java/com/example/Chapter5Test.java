@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.ch5.Contestant;
 import com.example.ch5.MindReader;
 import com.example.ch5.Thinker;
 import com.example.performer.Performer;
@@ -29,4 +30,18 @@ public class Chapter5Test {
 
         assertThat(magician.getThoughts(), is(thoughts));
     }
+
+    @Test
+    public void addMethod() throws Exception {
+        final Performer tom = (Performer) ctx.getBean("tom");
+        System.out.println(tom.perform());
+        final Contestant tomContestant = (Contestant) tom;
+        assertThat(tomContestant.receiveAward(), is("Wow, I win award, thanks"));
+    }
+
+    /*@Test
+    public void aspectUsingAnnotations() throws Exception {
+        final Performer tom = (Performer) ctx.getBean("tom");
+        System.out.println(tom.perform());
+    }*/
 }

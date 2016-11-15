@@ -2,13 +2,13 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:aop="http://www.springframework.org/schema/aop"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
        http://www.springframework.org/schema/aop
-       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
+       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
     <bean id="audience" class="com.example.ch5.Audience"/>
-
     <aop:config>
         <aop:aspect ref="audience">
             <aop:pointcut id="performance"
@@ -33,7 +33,17 @@
                         pointcut-ref="thinking"
                         arg-names="tho"/>
         </aop:aspect>
+
+        <aop:aspect>
+            <aop:declare-parents
+                    types-matching="com.example.performer.Performer+"
+                    implement-interface="com.example.ch5.Contestant"
+                    default-impl="com.example.ch5.GraciousContestant"/>
+        </aop:aspect>
     </aop:config>
+
     <bean id="magician" class="com.example.ch5.Magician"/>
     <bean id="volunteer" class="com.example.ch5.Volunteer"/>
+
+    <aop:aspectj-autoproxy/>
 </beans>
