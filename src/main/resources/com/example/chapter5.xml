@@ -37,18 +37,19 @@
                         arg-names="tho"/>
         </aop:aspect>-->
 
-        <aop:aspect>
+        <!--<aop:aspect>
             <aop:declare-parents
                     types-matching="com.example.performer.Performer+"
                     implement-interface="com.example.ch5.Contestant"
                     default-impl="com.example.ch5.GraciousContestant"/>
-        </aop:aspect>
+        </aop:aspect>-->
     </aop:config>
 
     <bean id="magician" class="com.example.ch5.Magician"/>
     <bean id="volunteer" class="com.example.ch5.Volunteer"/>
 
     <aop:aspectj-autoproxy/>
-    <bean id="audienceA" class="com.example.ch5.AudienceA"/>
+    <bean class="com.example.ch5.AudienceA"/>
     <bean id="magicianA" class="com.example.ch5.MagicianA"/>
+    <bean class="com.example.ch5.ContestantIntroducer"/>
 </beans>

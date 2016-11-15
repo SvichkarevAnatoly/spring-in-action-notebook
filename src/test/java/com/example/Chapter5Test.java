@@ -48,7 +48,7 @@ public class Chapter5Test {
     }
 
     @Test
-    public void getArgsUsingAspectWithAnnotation() throws Exception {
+    public void getArgsUsingAspectUsingAnnotation() throws Exception {
         final MindReader magician = (MindReader) ctx.getBean("magicianA");
         final Thinker volunteer = (Thinker) ctx.getBean("volunteer");
 
@@ -56,5 +56,13 @@ public class Chapter5Test {
         volunteer.thinkOfSomething(thoughts);
 
         assertThat(magician.getThoughts(), is(thoughts));
+    }
+
+    @Test
+    public void addMethodUsingAnnotation() throws Exception {
+        final Performer tom = (Performer) ctx.getBean("tom");
+        System.out.println(tom.perform());
+        final Contestant tomContestant = (Contestant) tom;
+        assertThat(tomContestant.receiveAward(), is("Wow, I win award, thanks"));
     }
 }
