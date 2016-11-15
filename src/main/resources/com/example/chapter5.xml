@@ -2,25 +2,28 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd
        http://www.springframework.org/schema/aop
        http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
-    <bean id="audience" class="com.example.ch5.Audience"/>
+    <!--<bean id="audience" class="com.example.ch5.Audience"/>
     <aop:config>
         <aop:aspect ref="audience">
             <aop:pointcut id="performance"
                           expression="execution(* com.example.performer.Performer.perform(..))"/>
 
             <aop:around method="watchPerformance" pointcut-ref="performance"/>
-            <!--<aop:before pointcut-ref="performance" method="takeSeats"/>
+            &lt;!&ndash;<aop:before pointcut-ref="performance" method="takeSeats"/>
             <aop:before pointcut-ref="performance" method="turnOffCellPhones"/>
             <aop:after-returning pointcut-ref="performance" method="applaud"/>
-            <aop:after-throwing pointcut-ref="performance" method="demandRefund"/>-->
+            <aop:after-throwing pointcut-ref="performance" method="demandRefund"/>&ndash;&gt;
         </aop:aspect>
-    </aop:config>
+    </aop:config>-->
     <bean id="tom" class="com.example.performer.Juggler"/>
 
     <aop:config>
@@ -46,4 +49,5 @@
     <bean id="volunteer" class="com.example.ch5.Volunteer"/>
 
     <aop:aspectj-autoproxy/>
+    <bean id="audienceA" class="com.example.ch5.AudienceA"/>
 </beans>

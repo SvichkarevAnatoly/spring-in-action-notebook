@@ -8,22 +8,22 @@ public class AudienceA {
     public void performance() {
     }
 
-    @Before("performance")
+    @Before("performance()")
     public void takeSeats() {
         System.out.println("The audience is taking their seats.");
     }
 
-    @Before("performance")
+    @Before("performance()")
     public void turnOffCellPhones() {
         System.out.println("The audience is turning off their cellphones");
     }
 
-    @AfterReturning("performance")
+    @AfterReturning("performance()")
     public void applaud() {
         System.out.println("CLAP CLAP CLAP CLAP CLAP");
     }
 
-    @AfterThrowing("performance")
+    @AfterThrowing("performance()")
     public void demandRefund() {
         System.out.println("Boo! We want our money back!");
     }

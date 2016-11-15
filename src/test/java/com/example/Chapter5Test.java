@@ -39,9 +39,9 @@ public class Chapter5Test {
         assertThat(tomContestant.receiveAward(), is("Wow, I win award, thanks"));
     }
 
-    /*@Test
+    @Test
     public void aspectUsingAnnotations() throws Exception {
         final Performer tom = (Performer) ctx.getBean("tom");
         System.out.println(tom.perform());
-    }*/
+    }
 }
