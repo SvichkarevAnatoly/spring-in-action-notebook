@@ -4,6 +4,7 @@ import com.example.ch5.Contestant;
 import com.example.ch5.MindReader;
 import com.example.ch5.Thinker;
 import com.example.performer.Performer;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -21,6 +22,7 @@ public class Chapter5Test {
     }
 
     @Test
+    @Ignore
     public void getArgsUsingAspect() throws Exception {
         final MindReader magician = (MindReader) ctx.getBean("magician");
         final Thinker volunteer = (Thinker) ctx.getBean("volunteer");
@@ -43,5 +45,16 @@ public class Chapter5Test {
     public void aspectUsingAnnotations() throws Exception {
         final Performer tom = (Performer) ctx.getBean("tom");
         System.out.println(tom.perform());
+    }
+
+    @Test
+    public void getArgsUsingAspectWithAnnotation() throws Exception {
+        final MindReader magician = (MindReader) ctx.getBean("magicianA");
+        final Thinker volunteer = (Thinker) ctx.getBean("volunteer");
+
+        final String thoughts = "Queen of Hearts";
+        volunteer.thinkOfSomething(thoughts);
+
+        assertThat(magician.getThoughts(), is(thoughts));
     }
 }
